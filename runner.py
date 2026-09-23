@@ -7,7 +7,7 @@ import subprocess
 def main():
     parser = argparse.ArgumentParser(description="Wrapper around run.py to make experimentation easier.")
     parser.add_argument("system", type=str, choices=("ircot", "ircot_qa", "oner", "oner_qa", "nor_qa"))
-    parser.add_argument("model", type=str, choices=("flan-t5-xxl", "flan-t5-xl", "none", 'gpt'))
+    parser.add_argument("model", type=str, choices=("flan-t5-xxl", "flan-t5-xl", "flan-t5-base", "none", 'gpt'))
     all_datasets = ["hotpotqa", "2wikimultihopqa", "musique", 'nq', 'trivia', 'squad']
     all_datasets += ["_to_".join([dataset_a, dataset_b]) for dataset_a in all_datasets for dataset_b in all_datasets]
     parser.add_argument("dataset", type=str, choices=all_datasets)
